@@ -150,6 +150,15 @@
       function fastForward() {
         video.currentTime += 10;
       }
+
+      document.addEventListener("click", (event) => {
+        const isClickInsideMenu =
+          menuContent.contains(event.target) ||
+          event.target.closest(".menu button");
+        if (!isClickInsideMenu) {
+          menuContent.style.display = "none";
+        }
+      });
     </script>
   </body>
 </html>
